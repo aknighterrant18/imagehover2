@@ -4,40 +4,35 @@
         <meta charset="utf-8">
 <style>
 
-#wrapper {
-  padding: 0px;
-  width: 1080px;
+body {
+  padding: 5px;
+}
+
+img {
+  width: 100%; /* need to overwrite inline dimensions */
   height: auto;
-  overflow: hidden;
 }
 
-h1,
-p {
-  margin: 0px;
-  padding: 0px;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 10px;
 }
 
-.image-container {
-  clear: left;
-  float: left;
-  width: 250px;
-  height: 200px;
+/* hover styles */
+.fic {
   position: relative;
-  margin: 10px;
+  line-height: 0;
+  overflow: hidden;
   cursor: pointer;
 }
 
-.image-container img {
-  width: 250px;
-  height: 200px;
+.fic-caption {
+  background: #e9e5e3;
+  z-index: 1;
   position: absolute;
-}
-
-.image-caption {
   width: 100%;
   height: 100%;
-  background: #e9e5e3;
-  position: absolute;
   opacity: 0;
   transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;
@@ -46,79 +41,129 @@ p {
   -ms-transition: all 300ms ease-in-out;
 }
 
-.image-caption h1 {
+.fic-caption h1 {
   padding: 45px 0px 5px 0px;
   text-align: center;
-  margin-left: -15px;
   font-family: 'EB Garamond', serif;
   font-size: 20px;
   color: #434040;
 }
 
-.image-caption p {
+.fic-caption p {
   padding: 0px 7px 0px 7px;
   text-align: center;
   font-family: 'Open Sans', sans serif;
   font-size: 14px;
+  line-height: 16px;
   color: #937264;
 }
 
-.image-container:hover .image-caption {
+.fic:hover .fic-caption {
   opacity: 1;
 }
 
-/* media queries */
 
-@media screen and (min-width: 0px) and (max-width: 1160px) {
-  #wrapper {
-    width: 100%;
-    height: 100%;
-    padding: 0px 0px;
+/* for touch screen devices */
+@media (hover: none) { 
+  .fic-caption {
+    opacity: 1;
   }
 }
 
-  .image-container {
-    float: left;
-    width: 100%;
-    margin: 5px;
-    overflow: hidden;
-    position: relative;
-  }
-  .image-caption {
-    width: 250px;
-    height: 200px;
-  }
-}
 </style>
 </head>
+
 <body>
+
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div id="wrapper">
-  <div class="image-container">
-    <img src="https://i.ibb.co/HtJX9Zt/50s-au.png" />
-    <div class="image-caption">
-      <h1>'50s AU</h1>
-      <p>Geralt is a lingerie model for a queer stag mag, Jaskier is the new photographer, Yennefer is the magazine's owner.</p>
-    </div>
-  </div>
+<div class="child-page-listing">
 
-  <div class="image-container">
-    <img src="https://i.ibb.co/SKwJb94/midinvaerne.png" />
-    <div class="image-caption">
-      <h1>Midinváerne gifts</h1>
-      <p>Jaskier discovers what Geralt wears underneath his armor.</p>
-    </div>
-  </div>
+  <div class="grid-container">
 
-  <div class="image-container">
-    <img src="https://i.ibb.co/zS96k1V/modern-au.png" />
-    <div class="image-caption">
-      <h1>Modern AU / Ranch HC</h1>
-      <p>Geralt is saving up to buy land out west and start a ranch, but his $300 car needs a lot of work. Sparks fly when Geralt meets his mechanic's nephew, Julian (or Jaskier), who's very attractive - and very wealthy. </p>
-    </div>
+    <article id="3685" class="fic">
+
+      <a class="fic-caption">
+        <h1>'50s AU</h1>
+          <p>Geralt is a lingerie model for a queer stag mag, Jaskier is the new photographer, Yennefer is the magazine's owner.</p>
+      </a>
+
+      <div class="fic img">
+            <img width="250" height="200" src="https://i.ibb.co/HtJX9Zt/50s-au.png" alt="50s-au" alt="'50s au">    </a>
+
+      </div>
+
+    </article>
+
+    <article id="3688" class="fic">
+
+      <a class="fic-caption">
+        <h1>Midinváerne gifts</h1>
+          <p>Jaskier discovers what Geralt wears underneath his armor.</p>
+      </a>
+
+      <div class="fic img">
+            <img width="250" height="200" src="https://i.ibb.co/SKwJb94/midinvaerne.png" alt="midinvaerne gifts">  </a>
+
+      </div>
+
+    </article>
+
+    <article id="3691" class="fic">
+
+      <a class="fic-caption">
+        <h1>Modern AU / Ranch HC</h1>
+          <p>Geralt is saving up to buy land out west and start a ranch, but his $300 car needs a lot of work. Sparks fly when Geralt meets his mechanic's nephew, Julian (or Jaskier), who's very attractive - and very wealthy.</p>        
+      </a>
+
+      <div class="fic img">
+            <img width="250" height="200" src="https://i.ibb.co/zS96k1V/modern-au.png" alt="modern au">  </a>
+
+      </div>
+
+    </article>
+
+    <article id="3694" class="fic">
+
+      <a class="fic-caption" href="#">
+          Cape Town           </a>
+
+      <div class="fic img">
+        <a href="#">
+            <img width="300" height="169" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/cape-town-768x432.jpg" alt="cape town">  </a>
+
+      </div>
+
+    </article>
+
+    <article id="3697" class="fic">
+
+      <a class="fic-caption" href="#">
+          Beijing           </a>
+
+      <div class="fic img">
+        <a href="#">
+            <img width="300" height="169" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/beijing-768x432.jpg" alt="beijing">    </a>
+
+      </div>
+
+    </article>
+
+    <article id="3700" class="fic">
+
+      <a class="fic-caption" href="#">
+          Paris           </a>
+
+      <div class="fic img">
+        <a href="#">
+            <img width="300" height="169" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/paris-768x432.jpg" alt="paris">          
+          </a>
+      </div>
+
+    </article>
+
   </div>
+  <!-- end grid container -->
 </div>
 </body>
 </html>
